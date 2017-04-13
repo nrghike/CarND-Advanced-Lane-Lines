@@ -136,13 +136,12 @@ Here's a [link to my video result](./project_video_output.mp4)
 ####1. Briefly discuss any problems / issues you faced in your implementation of this project. Where will your pipeline likely fail? What could you do to make it more robust?
 
  Some of the issues that I faced are as follows: 
-* I tried applying different color thresholds and they gave different results. Choosing a correct value of thresholf to convert to binary seems to be very important.
-* I tried different colors spaces as well. RGB to YCbCr, HSV and HLS. Each color space gives different information.I might plan to use different color spaces dynamically to obtain lanes in future.
-* Choosing points for initial perspective transform was a big headache.
-*  My algorithm jitters a little at initialization.
+* Applying color and gradient thresholds: Choosing the correct values for thresholds is a challenge as it greatly effects the amount of noise in the binary image. 
+* While doing perspective transform, I struggled in choosing appropriate source and destination points. 
+* I faced difficulty in optimizing my search for lane lines in subsequent video frames. 
 
 To make it more robust, I could do following things: 
-* Smoothing techniques can be used to obtain better results. 
-
+* Use a low-pass filter to smooth the lane detection over frames. 
+* Although I have implemented outlier rejection, I think there can be a better way to do that.
 
 
